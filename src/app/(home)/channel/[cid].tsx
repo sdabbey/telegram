@@ -1,20 +1,35 @@
 import { useLocalSearchParams } from 'expo-router'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ActivityIndicator, Text } from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Channel as ChannelType } from 'stream-chat'
-import { Channel, MessageInput, MessageList } from 'stream-chat-expo';
+import { Channel, MessageInput, MessageList, useChatContext } from 'stream-chat-expo';
 
 export default function ChannelScreen(){
     const [channel, setChannel] = useState<ChannelType | null>(null);
-    const {cid} = useLocalSearchParams();
+    const {cid} = useLocalSearchParams<{cid: string}>();
 
+    const { client } = useChatContext();
+
+    useEffect(() => {
+      const fetchchannel = async () => {
+        const channels = await client.queryChannels({ cid});
+        setChannel(channels[0]);
+      };
+
+      fetchchannel();
+    }, [cid]);
+    
     if (!channel){
         return <ActivityIndicator/>;
     }
     return ( 
         <Channel channel={channel}>
           <MessageList />
-          <MessageInput />
+          <SafeAreaView edges={['bottom']}>
+            <MessageInput />
+          </SafeAreaView>
+          
         </Channel>
       )
 }
