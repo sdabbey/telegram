@@ -1,4 +1,4 @@
-import { Link, Stack, router } from "expo-router";
+import { Link, Redirect, Stack, router } from "expo-router";
 import React from "react";
 import { ChannelList } from "stream-chat-expo";
 import { useAuth } from "../../../providers/AuthProvider";
@@ -8,6 +8,8 @@ export default function MainTabScreen(){
     const { user } = useAuth();
     return (
         <>
+        {/* Delete later */}
+        <Redirect href={'/(home)/call'} />
             <Stack.Screen 
               options={{
                 headerRight: () => (

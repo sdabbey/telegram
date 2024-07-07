@@ -24,7 +24,7 @@ export default function ChannelScreen(){
         return <ActivityIndicator/>;
     }
     return ( 
-        <Channel channel={channel}>
+        <Channel channel={channel} audioRecordingEnabled>
           <MessageList />
           <SafeAreaView edges={['bottom']}>
             <MessageInput />
