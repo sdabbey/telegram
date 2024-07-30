@@ -7,7 +7,6 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
-   
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -23,7 +22,6 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      
       "package": "com.Telegram"
     },
     "web": {
@@ -31,7 +29,15 @@
       "bundler": "metro"
     },
     "plugins": [
-      "expo-router"      
-    ]
+      "expo-router"
+    ],
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "f53ced05-0cd0-49a5-b797-b69aafa515ae"
+      }
+    }
   }
 }
