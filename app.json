@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Telegram",
+    "name": "QuickTalk",
     "slug": "Telegram",
-    "scheme": "myTelegram",
+    "scheme": "myQuickTalk",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -22,7 +22,8 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.Telegram"
+      "package": "com.Telegram",
+      "name": "QuickTalk"
     },
     "web": {
       "favicon": "./assets/favicon.png",
